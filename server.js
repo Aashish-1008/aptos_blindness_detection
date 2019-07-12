@@ -59,14 +59,12 @@ csv({
 			category = "Proliferative_DR"
 
 		imageFileLocation = imageFileLocation + json["id_code"] + ".png"
-		console.log(imageFileLocation, category)
-		uploadDataToSkyl(imageFileLocation,category).then(function(skylResponse){
-			// return resolve(json)
-			return reject(json)
-		}).catch(function(err){
+		uploadDataToSkyl(imageFileLocation, category).then(function(skylResponse) {
+			return resolve(json)
+		}).catch(function(err) {
 			return reject(err)
 		})
-		
+
 	});
 }, function(err) {
 	console.log(err)
